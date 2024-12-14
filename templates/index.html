@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMDb Movie Fetcher</title>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
 </head>
-<body>
-    <h1>Fetch Movie Data from IMDb</h1>
-    <form method="POST">
-        <label for="imdb_id">Enter IMDb ID:</label>
-        <input type="text" id="imdb_id" name="imdb_id" required>
-        <button type="submit">Fetch Data</button>
-    </form>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-6xl font-bold text-center bg-slate-300 py-12">Fetch Movie Data from IMDb</h1>
+        <form method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <label for="imdb_id" class="block text-sm font-medium text-gray-700">Enter IMDb ID:</label>
+            <input type="text" id="imdb_id" name="imdb_id" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500">
+            <button type="submit" class="mt-4 w-200 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Fetch Data</button>
+        </form>
+    </div>
 </body>
 </html>

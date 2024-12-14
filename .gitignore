@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.db
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.env
+
+# Node modules (if applicable)
+node_modules/
+
+# Tailwind CSS generated files
+/static/styles.css
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+
+# MacOS specific files
+.DS_Store
+
+# Log files
+*.log

@@ -1,6 +1,6 @@
+from flask import Flask, jsonify, render_template, request
 import os
 import requests
-from flask import Flask, jsonify, render_template, request
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -24,20 +24,7 @@ def get_movie_data(imdb_id):
     data = response.json()
 
     if data['Response'] == 'True':
-        # Format the response in Markdown
-        markdown_response = f"""
-# {data.get("Title", "N/A")}
-![Poster]({data.get("Poster", "N/A")})
-
-**IMDb ID**: {data.get("imdbID", "N/A")}  
-**Length**: {data.get("Runtime", "N/A")}  
-**Genre**: {data.get("Genre", "N/A")}  
-**Year**: {data.get("Year", "N/A")}  
-**Cast**: {data.get("Actors", "N/A")}  
-**Director**: {data.get("Director", "N/A")}  
-**Plot**: {data.get("Plot", "N/A")}
-        """
-        return markdown_response, 200, {'Content-Type': 'text/markdown'}
+        return render_template('result.html', data=data)
     else:
         return jsonify({"error": data.get("Error", "Movie not found")}), 404
 
